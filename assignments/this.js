@@ -15,7 +15,7 @@
 function sayHello (name) {
 	console.log(this)
 	// this will refer back to the global/window object
-}	
+};	
 
 // Principle 2
 
@@ -35,11 +35,14 @@ name.greet();
 function User (username){
     this.businessName = 'Facebook'
     this.username = username;
-}
+};
 
 User.prototype.hello = function() {
     console.log(`${this.username}, welcome to ${this.businessName}`)
-}
+};
+User.prototype.goodBye = function() {
+    console.log(`Goodbye ${this.username}`);
+};
 
 const david = new User('dbarrios');
 david.hello();
@@ -47,3 +50,6 @@ david.hello();
 // Principle 4
 
 // code example for Explicit Binding
+const john = new User('john26');
+
+david.goodBye.call(john);
