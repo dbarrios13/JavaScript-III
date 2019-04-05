@@ -47,6 +47,7 @@ User.prototype.goodBye = function() {
 const david = new User('dbarrios');
 david.hello();
 
+
 // Principle 4
 
 // code example for Explicit Binding
